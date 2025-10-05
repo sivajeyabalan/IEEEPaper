@@ -140,9 +140,9 @@ class NetworkStatePredictorModel(nn.Module):
         # Positional encoding
         self.pos_encoding = PositionalEncoding(hidden_dim, max_seq_len)
         
-        # Network state encoder
+        # Network state encoder (input_dim * 2 because we concatenate traffic_patterns and current_states)
         self.state_encoder = NetworkStateEncoder(
-            input_dim=input_dim,
+            input_dim=input_dim * 2,  # Fixed: account for concatenation
             hidden_dim=hidden_dim,
             output_dim=hidden_dim
         )

@@ -1,0 +1,3 @@
+[console_scripts]
+geniot-demo = geniot_optimizer.examples.demo:main
+geniot-train = geniot_optimizer.training.pipeline:main
